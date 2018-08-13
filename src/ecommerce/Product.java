@@ -10,6 +10,8 @@ public class Product {
     /**
      * @param args the command line arguments
      */
+    
+    //attributes
     private String name;
     private double price;
     private String category;
@@ -18,6 +20,7 @@ public class Product {
     private String author;
     private String color;
 
+    //constructors
     public Product(String name, double price, String category, int quantity) {
         this.name = name;
         this.price = price;
@@ -59,6 +62,7 @@ public class Product {
         return "Product{" + "name=" + name + ", price=" + price + ", category=" + category + ", quantity=" + quantity + ", size=" + size + ", author=" + author + ", color=" + color + '}';
     }
 
+    //setters and getters
     public void setPrice(double price) {
         this.price = price;
     }
@@ -103,6 +107,7 @@ public class Product {
         this.color = color;
     }
     
+    //instant methods
     boolean buy(){
         if(this.quantity>0){
             this.quantity--;
