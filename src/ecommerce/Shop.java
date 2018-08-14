@@ -52,6 +52,7 @@ public class Shop {
                 break;
             }
         }
+        scanner.close();
 
     }
 
