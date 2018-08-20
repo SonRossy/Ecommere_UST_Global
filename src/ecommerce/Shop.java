@@ -1,5 +1,6 @@
 package ecommerce;
 
+import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -21,16 +22,16 @@ public class Shop {
         new Product("Head First Design Pattern", 37.35, "Books", 3, "Eric Freeman")};
 
     public static void main(String[] args) {
-        /* // here is our invetory
-        Product inventory[] = new Product[5];
-        //initialize our array of products
-        inventory[0] = new Product("Business Ritual Women’s Long Sleeve Top", 65.39, "Apparel", 4, 'L', "Blue");
-        inventory[1] = new Product("The Art of Computer Programming", 190.54, "Books", 9, "Donald E. Knuth");
-        inventory[2] = new Product("Men’s Business Casual Shirt", 57.10, "Apparel", 2, 'M', "Teal");
-        inventory[3] = new Product("Organic Turmeric Soap", 11.25, "Bath & Beauty", 1);
-        inventory[4] = new Product("Head First Design Pattern", 37.35, "Books", 3, "Eric Freeman");*/
 
         Scanner scanner = new Scanner(System.in);
+        
+        //cheking the time in order to close shop
+        Date date=new Date();
+        int hours=date.getHours();
+        
+        if(hours>=21){
+            isShopOpen=false;
+        }
 
         //check if shop open
         if (!isShopOpen) {
@@ -53,18 +54,7 @@ public class Shop {
                     } else {
                         System.out.println("Sorry! This product is out of stock ");
                     }
-                    /*if (userInput > -1 && userInput < 5) {
-                        if (inventory[userInput].buy()) {
-                            System.out.println("Your purchase was successful");
-                            totalAmount += inventory[userInput].getPrice();
-                        } else {
-                            System.out.println("Sorry! This product is out of stock ");
-                        }
-                        
-                    } else {
-                        System.out.println("Thank you for shopping with us! The total amount is $" + totalAmount);
-                        break;
-                    }*/
+
                 } catch (ArrayIndexOutOfBoundsException e) {
                     System.out.println("Thank you for shopping with us! The total amount is $" + totalAmount);
                     break;
